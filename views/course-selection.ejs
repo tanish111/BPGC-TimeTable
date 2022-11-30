@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title></title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="./style/global.css" />
+    <link rel="stylesheet" href="./style/course-selection.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Carter One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=PT Sans Narrow:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <nav>
+      <button class="branch-button1"><div class="branch-div"><b><%= branch %></b></div></button>
+      <button class="done-button" id="done"><div class="done-div"><b>Done</b></div></button>
+      </nav>
+    <div class="courseselection-div">
+      <div class="question-div1">
+        <div class="select-first-class-in-the-week">
+          Select first class in the week for the given courses
+        </div>
+      </div>
+      <% for(var i = 0; i < courses.length; i++) { %>
+      <div class="light-card-1_n">
+          <div class="course_box_n">
+        <b class="math-f111-b_n"><%= courses[i][1].name %> </b><br>
+        <div class="remind-before_n"><b>Remind Before</b><select name="remind" id="remind">
+          <% for(var j = 0;j < courses.length;j++){ %>
+            <option value= <%= j %> ><%= time_1[j] %> minutes</option>
+            <% } %>
+        </select></div>
+        <% if (courses[i][1].type == 't') { %>
+        <div class="room-b_n"><b>Room</b><select name="room" id="room">
+          <% for(var j = 0;j < courses[i].length;j++) { %>
+            <option value= <%= courses[i][j].location %> > <%= courses[i][j].location %>  </option>
+            <% } %>
+        </select></div>
+        <% } %>
+
+        <div class="select-first-class_n"><b>Select first class</b><select name="lectures" id="time">
+          <% for(var j = 0;j < courses[i].length;j++) { %>
+            <option value= <%= courses[i][j].timestart %> > <%= courses[i][j].timestart %>  </option>
+            <% } %>
+        </select></div>      
+      </div>
+      </div>
+      <% } %>
+      </div>
+
+    
+    <script>
+      function getValue(){
+      var e = document.querySelectorAll('[id=time]');
+      var j = document.querySelectorAll('[id=remind');
+      first_class = []
+      remind = []
+      for(var i = 0; i < e.length; i++) {
+      var value = e[i].value;
+      var text = e[i].options[e[i].selectedIndex].text;
+      first_class.push(text);
+      }
+      for(var i = 0; i < e.length; i++) {
+      var value = j[i].value;
+      var text = j[i].options[j[i].selectedIndex].text;
+      remind.push(text);
+      }
+      const ics = require('ics')
+const { writeFileSync } = require('fs')
+const event = {
+    start: [2022, 11, 30, 6, 30],
+    duration: { hours: 6},
+    title: 'MATHS F111',
+    recurrenceRule: 'FREQ=WEEKLY;BYDAY=SU;INTERVAL=1;COUNT=20'
+  }
+  ics.createEvent(event, (error, value) => {
+    if (error) {
+      console.log(error)
+    }
+  
+    writeFileSync(`event.ics`, value)
+  })
+      console.log(first_class,remind)
+      }
+      var done_bt = document.getElementById("done");
+      done_bt.addEventListener("click",getValue) ;
+    </script>
+  </body>
+</html>

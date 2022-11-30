@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title></title>
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="./style/global.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Carter One:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=PT Sans Narrow:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="home-div">
+      <div class="question-div">
+        <h2 class="select-your-branch">Select your branch</h2>
+      </div>
+      <div class="title-div">
+        <div class="bpgc-div"><p class="bpgc">BPGC</p></div>
+        <div class="timetable-div">TIMETABLE</div>
+      </div>
+      <div class="branches-div">
+        <div class="frame-div">
+          <button class="msc-eco-button" autofocus id="mscEcoButton">
+            <b class="msc-eco-b">Msc. Eco</b></button
+          ><button class="msc-chem-button" autofocus id="mscChemButton">
+            <b class="msc-eco-b">Msc. Chem</b></button
+          ><button class="cse-button" autofocus id="cSEButton">
+            <b class="msc-eco-b">CSE</b></button
+          ><button class="eni-button" autofocus id="eNIButton">
+            <b class="msc-eco-b">ENI</b></button
+          ><button class="mech-button" autofocus id="mechButton">
+            <b class="msc-eco-b">Mech</b>
+          </button>
+        </div>
+        <div class="frame-div1">
+          <button class="msc-phy-button" autofocus id="mscPhyButton">
+            <b class="msc-eco-b">Msc. Phy</b></button
+          ><button class="msc-phy-button" id="mscBioButton">
+            <b class="msc-eco-b">Msc. Bio</b></button
+          ><button class="mech-button" autofocus id="eCEButton">
+            <b class="msc-eco-b">ECE</b></button
+          ><button class="eni-button" autofocus id="eEEButton">
+            <b class="msc-eco-b">EEE</b></button
+          ><button class="mech-button" autofocus id="chemButton">
+            <b class="msc-eco-b">Chem</b>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var mscEcoButton = document.getElementById("mscEcoButton");
+      if (mscEcoButton) {
+        mscEcoButton.addEventListener("click", function (e) {
+          window.location.href = "./Msc-Eco";
+        });
+      }
+      
+      var mscChemButton = document.getElementById("mscChemButton");
+      if (mscChemButton) {
+        mscChemButton.addEventListener("click", function (e) {
+          window.location.href = "./Msc-Chem";
+        });
+      }
+      
+      var cSEButton = document.getElementById("cSEButton");
+      if (cSEButton) {
+        cSEButton.addEventListener("click", function (e) {
+          window.location.href = "./CSE";
+        });
+      }
+      
+      var eNIButton = document.getElementById("eNIButton");
+      if (eNIButton) {
+        eNIButton.addEventListener("click", function (e) {
+          window.location.href = "./ENI";
+        });
+      }
+      
+      var mechButton = document.getElementById("mechButton");
+      if (mechButton) {
+        mechButton.addEventListener("click", function (e) {
+          window.location.href = "./Mech";
+        });
+      }
+      
+      var mscPhyButton = document.getElementById("mscPhyButton");
+      if (mscPhyButton) {
+        mscPhyButton.addEventListener("click", function (e) {
+          window.location.href = "./Msc-Phy";
+        });
+      }
+      
+      var mscBioButton = document.getElementById("mscBioButton");
+      if (mscBioButton) {
+        mscBioButton.addEventListener("click", function (e) {
+          window.location.href = "./Msc-Bio";
+        });
+      }
+      
+      var eCEButton = document.getElementById("eCEButton");
+      if (eCEButton) {
+        eCEButton.addEventListener("click", function (e) {
+          window.location.href = "./ECE";
+        });
+      }
+      
+      var eEEButton = document.getElementById("eEEButton");
+      if (eEEButton) {
+        eEEButton.addEventListener("click", function (e) {
+          window.location.href = "./EEE";
+        });
+      }
+      
+      var chemButton = document.getElementById("chemButton");
+      if (chemButton) {
+        chemButton.addEventListener("click", function (e) {
+          window.location.href = "./Chem";
+        });
+      }
+      </script>
+  </body>
+</html>

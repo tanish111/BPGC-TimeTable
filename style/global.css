@@ -1,0 +1,33 @@
+:root {
+  /* fonts */
+  --font-pt-sans-narrow: "PT Sans Narrow";
+  --font-carter-one: "Carter One";
+  --font-oswald: Oswald;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xs: 16px;
+  --font-size-sm: 20px;
+  --font-size-base: 25px;
+
+  /* Colors */
+  --color-gray-100: #5b84b1;
+  --color-gray-200: rgba(0, 0, 0, 0.2);
+  --white: #fff;
+  --color-teal-100: #159cea;
+  --color-turquoise: #93ffd8;
+  --color-black: #000;
+
+  /* Paddings */
+  --padding-2xs: 5px;
+  --padding-xs: 7px;
+  --padding-sm: 9px;
+  --padding-md: 10px;
+  --padding-lg: 17px;
+  --padding-xl: 32px;
+  --padding-2xl: 38px;
+
+  /* border radiuses */
+  --br-sm: 10px;
+  --br-md: 15px;
+}
